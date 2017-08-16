@@ -694,7 +694,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.Print("**: :__ `.  .' : :' '_.': ,. :' .; :' '_.'' .; :**");
   script.Print("**`.__.':_,._; :_;`.__.':_;:_;`.__.'`.__.'`.__.'**");
   script.Print("**************************************************");
-  script.Print("*                By:-ishubhamsingh               *");
+  script.Print("*   By:-ishubhamsingh       Mod: DennySPB        *");
   script.Print("**************************************************");
   script.Print(" ")
   script.AppendExtra("sleep (2);")
@@ -727,6 +727,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
     device = GetBuildProp("ro.aex.device", OPTIONS.info_dict)
     androidver = GetBuildProp("ro.build.version.release", OPTIONS.info_dict)
     manufacturer = GetBuildProp("ro.product.manufacturer", OPTIONS.info_dict)
+    gapps = GetBuildProp("ro.extended.gapps", OPTIONS.info_dict)
     sdkver = GetBuildProp("ro.build.version.sdk", OPTIONS.info_dict)
     if (OPTIONS.info_dict.get("default_root_method") == "magisk" or OPTIONS.info_dict.get("default_root_method") == "supersu"):  
       root_status = OPTIONS.info_dict.get("default_root_method")
@@ -742,6 +743,8 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
     script.Print(" SDK version: %s"%(sdkver));
     script.Print("");
     script.Print(" Root status: %s"%(root_status));
+    script.Print("");
+    script.Print(" Google apps: %s"%(gapps));
     script.Print("");
     script.Print(" Build ID: %s"%(buildidn));
     script.Print("");
