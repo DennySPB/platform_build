@@ -22,7 +22,6 @@ PRODUCT_PACKAGES := \
     BluetoothMidiService \
     Camera2 \
     Gallery2 \
-    MusicFX \
     OneTimeInitializer \
     Provision \
     SystemUI \
@@ -45,8 +44,15 @@ PRODUCT_PACKAGES += \
     vibrator.default \
     power.default
 
-PRODUCT_COPY_FILES ?= \
+ifeq ($(SET_V4A),true)
+PRODUCT_COPY_FILES := \
+        vendor/aosp/prebuilt/common/viperfx/audio_effects.conf:system/etc/audio_effects.conf
+else
+PRODUCT_COPY_FILES := \
         frameworks/av/media/libeffects/data/audio_effects.conf:system/etc/audio_effects.conf
+PRODUCT_PACKAGES := \
+    MusicFX
+endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.carrier=unknown
