@@ -20,13 +20,14 @@
 PRODUCT_PACKAGES := \
     Bluetooth \
     BluetoothMidiService \
-    Camera2 \
     Gallery2 \
     OneTimeInitializer \
     Provision \
     SystemUI \
     EasterEgg \
     WallpaperCropper
+
+#    Camera2 \
 
 PRODUCT_PACKAGES += \
     clatd \
