@@ -27,7 +27,10 @@ PRODUCT_PACKAGES := \
     EasterEgg \
     WallpaperCropper
 
-#    Camera2 \
+ifneq ($(TARGET_USES_CUSTOM_CAMERA),true)
+PRODUCT_PACKAGES += \
+    Camera2
+endif
 
 PRODUCT_PACKAGES += \
     clatd \
